@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<?import javafx.scene.control.DatePicker?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.xpense.TransactionController">
+    <center>
+        <GridPane alignment="CENTER" hgap="20" vgap="10">
+            <Text text="Amount: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtAmount" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <Text text="Category: "  GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <ComboBox fx:id="comboBox" value="Default" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Default"/>
+                        <String fx:value="Groceries"/>
+                        <String fx:value="Rent"/>
+                        <String fx:value="Salary"/>
+                        <String fx:value="Transportation"/>
+                        <String fx:value="Travel"/>
+                        <String fx:value="Pocket money"/>
+                        <String fx:value="Hobby"/>
+                        <String fx:value="Part time job"/>
+                        <String fx:value="Culture"/>
+                        <String fx:value="Lunch"/>
+                        <String fx:value="Coffee"/>
+                        <String fx:value="Snacking"/>
+                        <String fx:value="Present"/>
+                        <String fx:value="Scholarship"/>
+                        <String fx:value="Gym"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Text text="Note: "  GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="txtNote" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <Text text="Date: "  GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <DatePicker fx:id="datePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Text fx:id="lbNotification" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+            <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Button text="Ok" defaultButton="true" onAction="#okAction"/>
+                <Button text="Cancel" onAction="#exitAction"/>
+            </HBox>
+        </GridPane>
+    </center>
+</BorderPane>

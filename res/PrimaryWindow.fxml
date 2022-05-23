@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.xpense.MainController">
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Exit" onAction="#exitAction" accelerator="ctrl+x" />
+                <SeparatorMenuItem />
+                <MenuItem text="Add new" onAction="#onAddAction"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <FlowPane BorderPane.alignment="CENTER" hgap="10">
+            <ListView fixedCellSize="40" minWidth="400" maxWidth="500" minHeight="500" fx:id="listTransactions"/>
+            <GridPane hgap="10" vgap="10">
+                <Text fx:id="txtBalance" text="CURRENT BALANCE: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Text text="Filter by category: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="categoryFilter" value="All" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="All"/>
+                            <String fx:value="Groceries"/>
+                            <String fx:value="Rent"/>
+                            <String fx:value="Salary"/>
+                            <String fx:value="Transportation"/>
+                            <String fx:value="Travel"/>
+                            <String fx:value="Pocket money"/>
+                            <String fx:value="Hobby"/>
+                            <String fx:value="Part time job"/>
+                            <String fx:value="Culture"/>
+                            <String fx:value="Lunch"/>
+                            <String fx:value="Coffee"/>
+                            <String fx:value="Snacking"/>
+                            <String fx:value="Present"/>
+                            <String fx:value="Scholarship"/>
+                            <String fx:value="Gym"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Text text="Filter by type: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="typeFilter" value="All" GridPane.rowIndex="5" GridPane.columnIndex="0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="All"/>
+                            <String fx:value="Expense"/>
+                            <String fx:value="Income"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Text text="Filter by month: " GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="monthFilter" value="All" GridPane.rowIndex="7" GridPane.columnIndex="0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="All"/>
+                            <String fx:value="January"/>
+                            <String fx:value="February"/>
+                            <String fx:value="March"/>
+                            <String fx:value="April"/>
+                            <String fx:value="May"/>
+                            <String fx:value="June"/>
+                            <String fx:value="July"/>
+                            <String fx:value="August"/>
+                            <String fx:value="September"/>
+                            <String fx:value="October"/>
+                            <String fx:value="November"/>
+                            <String fx:value="December"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Text text="Actions: " GridPane.rowIndex="15" GridPane.columnIndex="0"/>
+                <VBox spacing="10" minWidth="50" GridPane.rowIndex="16" GridPane.columnIndex="0">
+                    <Button text="Edit transaction" onAction="#onEditAction"/>
+                    <Button text="Delete transaction" onAction="#onDeleteAction"/>
+                    <Button text="Details" onAction="#onDetails"/>
+                    <Button text="New transaction" onAction="#onAddAction"/>
+                </VBox>
+            </GridPane>
+        </FlowPane>
+    </center>
+</BorderPane>

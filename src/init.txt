@@ -1,0 +1,16 @@
+
+CREATE TABLE transactions (
+      transaction_id integer,
+      amount integer,
+      category_id integer,
+      date varchar(20),
+      note varchar(100),
+
+      PRIMARY KEY(transaction_id)
+);
+
+INSERT INTO transactions VALUES (0, 150, 2, '14/05/2022', 'test note');
+INSERT INTO transactions VALUES (1, 5, 5, '01/05/2022', 'test note666');
+INSERT INTO transactions VALUES (2, 500, 1, '22/04/2020', 'test note123');
+INSERT INTO transactions VALUES (3, 60, 7, '14/01/2012', 'test note888');
+INSERT INTO transactions VALUES (4, 4, 2, '13/05/2022', 'test note999');
